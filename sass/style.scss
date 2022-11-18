@@ -1,0 +1,238 @@
+@use"../utils/linear-gradient";
+@use "./pages/restaurant.scss";
+
+body {
+    font-family: Roboto ,sans-serif;
+}
+
+.loader{
+    position:fixed;
+    display:grid;
+    place-items:center;
+    background-color:#fff;
+    height:100vh;
+    inset:0;
+    z-index:1;
+    opacity:0.9;
+    animation: loading 200ms 3s;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+    i{
+        animation: spin 3s;
+    }
+}
+
+@keyframes loading{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(0);
+    }
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+.main{
+    padding:0 7rem;
+
+    @media (max-width:1000px){
+        padding:0 0.5rem;
+    }
+}
+.container{
+    width:100%;
+    max-width:1340px;
+    margin:0 auto;
+}
+
+.head_element{
+    display:flex;
+    justify-content:center;
+    
+    .food_logo{
+        font-family: Shrikhand,"cursive";
+        font-size:1.5em;
+        margin: 0;
+    }
+}
+
+.resto_location{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    background-color: #F2F2F2;
+}
+
+.location_item{
+    margin-top:27px;
+}
+
+.real_location{
+    margin-left:10px;
+}
+
+.titles{
+    padding: 2rem;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.explore_box{
+    display:flex;
+    justify-content:center;
+}
+.explore_btn{
+    padding: .75rem 1.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: 100px;
+    color: #fff;
+    background-color: #686868;
+    @include linear-gradient.gradient(0.9);
+    cursor:pointer;
+}
+
+.functionality{
+    counter-reset:x;
+   & ol{
+    display:flex;
+    gap:1rem;
+    padding:0;
+    @media(max-width:1000px){
+        flex-direction:column;
+    }
+   }
+   & li{
+    &::before{
+        counter-increment:x;
+        content: counter(x);
+        background-color:#9356dc;
+        width:1.5rem;
+        height:1.5rem;
+        display:grid;
+        place-items:center;
+        border-radius:50%;
+        position:absolute;
+        left:-1rem;
+    }
+    padding: 1.5rem 4.5rem;
+    margin: 1rem 0 1rem .75rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 13%);
+    border-radius: 1.25rem;
+    background-color: #f6f6f6;
+    display: flex;
+    position: relative;
+   }
+
+   & i.fas{
+    margin-right:1rem;
+   }
+}
+
+.menus{
+    background-color:#F6F6F6;
+    h2{
+        padding:2rem 1rem 0rem ;
+    }
+}
+.menus_cards{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:2rem;
+    @media(max-width:1000px){
+        grid-template-columns:repeat(1,1fr)
+    }
+    .new{
+        position:relative;
+    }
+    .new::before{
+        content:"Nouveau";
+        position:absolute;
+        height:2rem;
+        width:5rem;
+        background-color:#99e2d0;
+        color:darken(#99e2d0,50%);
+        display:grid;
+        place-items:center;
+        right:1rem;
+        top:1rem;
+    }
+    a{
+        text-decoration:none;
+        color:inherit;
+    }
+    h3,p{
+        margin:0;
+    }
+
+    h3{
+        padding-top:0.5rem;
+    }
+}
+
+.card{
+    &_image{
+        height:15rem;
+        background-size:cover;
+        border-radius:1rem 1rem 0rem 0rem;
+    }
+
+    @for $i from 1 through 4{
+        &_image-#{$i}{
+            background-image: url(../restaurants/menu#{$i}.jpg);
+        }
+    }
+
+    &_description{
+        position:relative;
+        background-color:white;
+        border-radius: 0 0 1rem 1rem;
+        h3,p{
+            margin:0.5rem;
+        }
+
+        i{
+            font-size:2rem;
+            position:absolute;
+            right:1rem;
+            top:50%;
+            transform:translateY(-50%);
+        }
+
+        .fas{
+            color:transparent;
+            background-clip:text;
+            -webkit-background-clip: text;
+            transition: all 200ms ease;
+            transition-duration:0.5s;
+            @include linear-gradient.gradient(1);
+            opacity:0;
+        }
+        &:hover .fas{
+            opacity:1;
+            transform:translateY(-50%) scale(1.2);
+        }
+    }
+}
+
+.footer{
+    background-color: #353535;
+    padding:1rem 2rem;
+    color:white;
+    h2{
+        color:#fff;
+        font-family:"Shrikhand","cursive";
+        font-size:1.5rem;
+    }
+    a{
+        text-decoration:none;
+        color:inherit;
+    }
+}

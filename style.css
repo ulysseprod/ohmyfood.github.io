@@ -1,0 +1,455 @@
+.h2 {
+  font-family: "Shrikhand", cursive;
+}
+
+.head_element {
+  position: relative;
+}
+.head_element .header_arrow {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #000;
+}
+.head_element .food_logo {
+  font-family: Shrikhand, "cursive";
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.banner img {
+  width: 100%;
+  max-height: 35rem;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.menu {
+  margin-top: -4rem !important;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f6f6f6;
+  position: relative;
+}
+.menu_title {
+  font-family: "Shrikhand", cursive;
+}
+
+.menu-heading {
+  padding: 1rem 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.menu-heading_heart i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menu-heading_heart .fas {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 200ms ease;
+  transition-duration: 0.5s;
+  background-image: linear-gradient(0deg, rgb(147, 86, 220), rgb(255, 121, 218));
+  opacity: 0;
+  cursor: pointer;
+}
+.menu-heading_heart:hover .fas {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.submenus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+}
+@media (max-width: 1000px) {
+  .submenus-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.submenu_header {
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-weight: 400;
+}
+.submenu_header::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #99e2d0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.menu-item {
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  animation: appear 0.6s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.menu-item_header {
+  flex: 1;
+  margin: 0;
+}
+.menu-item_title {
+  margin: 0;
+}
+.menu-item_description {
+  margin: 0;
+}
+.menu-item_price {
+  font-weight: 700;
+  display: flex;
+  align-items: flex-end;
+}
+.menu-item_check {
+  background-color: #99e2d0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: grid;
+  place-items: center;
+  transition-duration: 0.5s;
+}
+.menu-item:hover .menu-item_check {
+  margin-right: -1rem;
+}
+.menu-item_icon {
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: #fff;
+  display: grid !important;
+  place-items: center;
+  border-radius: 100px;
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+.menu-item:hover .menu-item_icon {
+  color: #99e2d0;
+  transform: rotate(0);
+}
+
+.delay-0 {
+  animation-delay: 0s;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+.delay-5 {
+  animation-delay: 0.5s;
+}
+
+.delay-6 {
+  animation-delay: 0.6s;
+}
+
+.delay-7 {
+  animation-delay: 0.7s;
+}
+
+.delay-8 {
+  animation-delay: 0.8s;
+}
+
+.delay-9 {
+  animation-delay: 0.9s;
+}
+
+.place-order {
+  display: grid;
+  place-items: center;
+  padding: 3rem 0;
+}
+.place-order_btn {
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: #fff;
+  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.loader {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: #fff;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  animation: loading 200ms 3s;
+  animation-fill-mode: forwards;
+  transform-origin: center;
+}
+.loader i {
+  animation: spin 3s;
+}
+
+@keyframes loading {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.main {
+  padding: 0 7rem;
+}
+@media (max-width: 1000px) {
+  .main {
+    padding: 0 0.5rem;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+.head_element {
+  display: flex;
+  justify-content: center;
+}
+.head_element .food_logo {
+  font-family: Shrikhand, "cursive";
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.resto_location {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #F2F2F2;
+}
+
+.location_item {
+  margin-top: 27px;
+}
+
+.real_location {
+  margin-left: 10px;
+}
+
+.titles {
+  padding: 2rem;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.explore_box {
+  display: flex;
+  justify-content: center;
+}
+
+.explore_btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: #fff;
+  background-color: #686868;
+  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  cursor: pointer;
+}
+
+.functionality {
+  counter-reset: x;
+}
+.functionality ol {
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+}
+@media (max-width: 1000px) {
+  .functionality ol {
+    flex-direction: column;
+  }
+}
+.functionality li {
+  padding: 1.5rem 4.5rem;
+  margin: 1rem 0 1rem 0.75rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.13);
+  border-radius: 1.25rem;
+  background-color: #f6f6f6;
+  display: flex;
+  position: relative;
+}
+.functionality li::before {
+  counter-increment: x;
+  content: counter(x);
+  background-color: #9356dc;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  left: -1rem;
+}
+.functionality i.fas {
+  margin-right: 1rem;
+}
+
+.menus {
+  background-color: #F6F6F6;
+}
+.menus h2 {
+  padding: 2rem 1rem 0rem;
+}
+
+.menus_cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 1000px) {
+  .menus_cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.menus_cards .new {
+  position: relative;
+}
+.menus_cards .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  background-color: #99e2d0;
+  color: #1b6150;
+  display: grid;
+  place-items: center;
+  right: 1rem;
+  top: 1rem;
+}
+.menus_cards a {
+  text-decoration: none;
+  color: inherit;
+}
+.menus_cards h3, .menus_cards p {
+  margin: 0;
+}
+.menus_cards h3 {
+  padding-top: 0.5rem;
+}
+
+.card_image {
+  height: 15rem;
+  background-size: cover;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+.card_image-1 {
+  background-image: url(../restaurants/menu1.jpg);
+}
+.card_image-2 {
+  background-image: url(../restaurants/menu2.jpg);
+}
+.card_image-3 {
+  background-image: url(../restaurants/menu3.jpg);
+}
+.card_image-4 {
+  background-image: url(../restaurants/menu4.jpg);
+}
+.card_description {
+  position: relative;
+  background-color: white;
+  border-radius: 0 0 1rem 1rem;
+}
+.card_description h3, .card_description p {
+  margin: 0.5rem;
+}
+.card_description i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.card_description .fas {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 200ms ease;
+  transition-duration: 0.5s;
+  background-image: linear-gradient(0deg, rgb(147, 86, 220), rgb(255, 121, 218));
+  opacity: 0;
+}
+.card_description:hover .fas {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.footer {
+  background-color: #353535;
+  padding: 1rem 2rem;
+  color: white;
+}
+.footer h2 {
+  color: #fff;
+  font-family: "Shrikhand", "cursive";
+  font-size: 1.5rem;
+}
+.footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*# sourceMappingURL=style.css.map */
