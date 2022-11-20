@@ -116,6 +116,9 @@
 .menu-item_header {
   flex: 1;
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .menu-item_title {
   margin: 0;
@@ -412,6 +415,7 @@ body {
   position: relative;
   background-color: white;
   border-radius: 0 0 1rem 1rem;
+  padding: 0.5rem;
 }
 .card_description h3, .card_description p {
   margin: 0.5rem;
