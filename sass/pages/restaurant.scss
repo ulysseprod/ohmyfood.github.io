@@ -118,11 +118,15 @@
     &_header{
         flex:1;
         margin:0;
+        white-space: nowrap;
+        text-overflow:ellipsis;
+        overflow: hidden;
     }
-
+    
     &_title{
         margin:0;
     }
+
     &_description{
         margin:0;
     }
