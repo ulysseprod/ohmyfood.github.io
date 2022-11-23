@@ -81,10 +81,12 @@
 }
 
 .submenu{
+    overflow:hidden;
     &_header{
         position: relative;
         padding-bottom: .5rem;
         font-weight: 400;
+        overflow:hidden;
         &::after{
             content: "";
             width: 3rem;
@@ -104,19 +106,22 @@
       transform: scale(1);
     }
   }
+
   
 .menu-item{
     background-color: #fff;
-    padding: 1rem;
+    padding: 1rem 0 1rem 1rem;
     display: flex;
     border-radius: .75rem;
     margin: 1rem 0;
     box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
     animation: appear .6s;
-    overflow: hidden;
     cursor: pointer;
+    overflow:hidden;
+
     &_header{
         flex:1;
+        display:inline-block;
         margin:0;
         white-space: nowrap;
         text-overflow:ellipsis;
@@ -129,6 +134,9 @@
 
     &_description{
         margin:0;
+        white-space: nowrap;
+        text-overflow:ellipsis;
+        overflow: hidden;
     }
     &_price{
         font-weight: 700;
@@ -138,7 +146,7 @@
     &_check{
         background-color: #99e2d0;
         margin: -1rem -5rem -1rem 1rem;
-        width: 4rem;
+        width: 5rem;
         display: grid;
         place-items:center;
         transition-duration: .5s;
@@ -167,7 +175,7 @@
 
 @for $i from 0 through 9 {
     .delay-#{$i} {
-      animation-delay: #{$i/10}s;
+      animation-delay: calc($i/10);
     }
   }
 

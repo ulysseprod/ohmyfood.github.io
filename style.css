@@ -79,10 +79,14 @@
   }
 }
 
+.submenu {
+  overflow: hidden;
+}
 .submenu_header {
   position: relative;
   padding-bottom: 0.5rem;
   font-weight: 400;
+  overflow: hidden;
 }
 .submenu_header::after {
   content: "";
@@ -104,17 +108,18 @@
 }
 .menu-item {
   background-color: #fff;
-  padding: 1rem;
+  padding: 1rem 0 1rem 1rem;
   display: flex;
   border-radius: 0.75rem;
   margin: 1rem 0;
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
   animation: appear 0.6s;
-  overflow: hidden;
   cursor: pointer;
+  overflow: hidden;
 }
 .menu-item_header {
   flex: 1;
+  display: inline-block;
   margin: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -125,6 +130,9 @@
 }
 .menu-item_description {
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .menu-item_price {
   font-weight: 700;
@@ -134,7 +142,7 @@
 .menu-item_check {
   background-color: #99e2d0;
   margin: -1rem -5rem -1rem 1rem;
-  width: 4rem;
+  width: 5rem;
   display: grid;
   place-items: center;
   transition-duration: 0.5s;
@@ -158,43 +166,43 @@
 }
 
 .delay-0 {
-  animation-delay: 0s;
+  animation-delay: 0;
 }
 
 .delay-1 {
-  animation-delay: 0.1s;
+  animation-delay: 0.1;
 }
 
 .delay-2 {
-  animation-delay: 0.2s;
+  animation-delay: 0.2;
 }
 
 .delay-3 {
-  animation-delay: 0.3s;
+  animation-delay: 0.3;
 }
 
 .delay-4 {
-  animation-delay: 0.4s;
+  animation-delay: 0.4;
 }
 
 .delay-5 {
-  animation-delay: 0.5s;
+  animation-delay: 0.5;
 }
 
 .delay-6 {
-  animation-delay: 0.6s;
+  animation-delay: 0.6;
 }
 
 .delay-7 {
-  animation-delay: 0.7s;
+  animation-delay: 0.7;
 }
 
 .delay-8 {
-  animation-delay: 0.8s;
+  animation-delay: 0.8;
 }
 
 .delay-9 {
-  animation-delay: 0.9s;
+  animation-delay: 0.9;
 }
 
 .place-order {
@@ -221,15 +229,14 @@ body {
 .loader {
   position: fixed;
   display: grid;
+  inset: 0;
   place-items: center;
   background-color: #fff;
   height: 100vh;
-  inset: 0;
   z-index: 1;
   opacity: 0.9;
   animation: loading 200ms 3s;
   animation-fill-mode: forwards;
-  transform-origin: center;
 }
 .loader i {
   animation: spin 3s;
@@ -308,7 +315,6 @@ body {
   font-size: 1.1rem;
   border-radius: 100px;
   color: #fff;
-  background-color: #686868;
   background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
   cursor: pointer;
 }
@@ -318,6 +324,7 @@ body {
 }
 .functionality ol {
   display: flex;
+  flex-direction: row;
   gap: 1rem;
   padding: 0;
 }

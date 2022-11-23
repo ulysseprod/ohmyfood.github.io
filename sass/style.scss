@@ -8,15 +8,16 @@ body {
 .loader{
     position:fixed;
     display:grid;
+    inset:0;
     place-items:center;
     background-color:#fff;
     height:100vh;
-    inset:0;
     z-index:1;
     opacity:0.9;
     animation: loading 200ms 3s;
     animation-fill-mode: forwards;
-    transform-origin: center;
+
+
     i{
         animation: spin 3s;
     }
@@ -94,7 +95,6 @@ body {
     font-size: 1.1rem;
     border-radius: 100px;
     color: #fff;
-    background-color: #686868;
     @include linear-gradient.gradient(0.9);
     cursor:pointer;
 }
@@ -103,6 +103,7 @@ body {
     counter-reset:x;
    & ol{
     display:flex;
+    flex-direction:row;
     gap:1rem;
     padding:0;
     @media(max-width:1000px){
