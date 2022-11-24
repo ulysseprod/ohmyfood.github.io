@@ -9,8 +9,6 @@
   position: absolute;
   left: 1rem;
   top: 50%;
-  display: grid;
-  place-items: center;
   transform: translateY(-50%);
   font-size: 1.2rem;
   color: #000;
@@ -86,7 +84,6 @@
   position: relative;
   padding-bottom: 0.5rem;
   font-weight: 400;
-  overflow: hidden;
 }
 .submenu_header::after {
   content: "";
@@ -98,14 +95,6 @@
   bottom: 0;
 }
 
-@keyframes appear {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .menu-item {
   background-color: #fff;
   padding: 1rem 0 1rem 1rem;
@@ -165,6 +154,14 @@
   transform: rotate(0);
 }
 
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .delay-0 {
   animation-delay: 0;
 }
@@ -279,7 +276,7 @@ body {
 }
 .head_element .food_logo {
   font-family: Shrikhand, "cursive";
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 0;
 }
 
